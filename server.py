@@ -27,6 +27,45 @@ logger.addHandler(handler)
 logger.setLevel(logging.INFO)
 
 
+def postprocess(text):
+    text = text.replace("ㅋ", "")\
+        .replace("ㅎ", "하")\
+        .replace("^^", "")\
+        .replace("ㅠ", "")\
+        .replace("ㅜ", "")\
+        .replace("[UNK]", "")\
+        .replace("ㅇㅇ", "응")\
+        .replace("ㄴ", "노")\
+        .replace("얔", "야")\
+        .replace("닠", "니")\
+        .replace("ㅡㅡ^", "")\
+        .replace("ㅡㅡ", "")\
+        .replace("  ", " ")\
+        .replace("개바쁨", "바쁨")\
+        .replace("개소름", "소름")\
+        .replace("알겟", "알겠")\
+        .replace("겟다", "겠다")\
+        .replace("겟어", "겠어")\
+        .replace("겠답", "겠다")\
+        .replace("모야", "뭐야")\
+        .replace("모얌", "뭐야")\
+        .replace("뭐얌", "뭐야")\
+        .replace("기여", "귀여")\
+        .replace("거얌", "거야")\
+        .replace(";", "")\
+        .replace("아님?", "아니야?")\
+        .replace("싶엉", "싶어")\
+        .replace("ㅇ", "응")\
+        .replace("엇던", "었던")\
+        .replace("까욤", "까요")\
+        .replace("보냇", "보냈")\
+        .replace("아니얌", "아니야")\
+        .replace("엇어", "었어")\
+        .replace("햇거든", "했거든")\
+        .strip()
+    return text
+
+
 class ChattingServicer(chat_pb2_grpc.ChattingServicer):
     def __init__(self, pretrained_model_path, model_config_path, tokenizer_model_path, decoding_method):
         self.decoding_method = decoding_method
@@ -86,6 +125,7 @@ class ChattingServicer(chat_pb2_grpc.ChattingServicer):
             raise ValueError(f"Invalid decoding method: {self.decoding_method}")
 
         output = self.tokenizer.decode(outputs.tolist()[0])
+        output = postprocess(output)
         logger.info("%s <--> %s", request.text, output)
         response = chat_pb2.Message(text=output)
         return response
