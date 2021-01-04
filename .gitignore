@@ -131,3 +131,6 @@ dmypy.json
 # editor specific
 .vscode/settings.json
 .vscode/sftp.json
+
+# models
+*.pth
