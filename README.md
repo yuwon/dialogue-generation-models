@@ -5,12 +5,12 @@
 ## Introduction
 
 * This is a repository of pretrained dialogue generation models (GPT-2 and Meena) of Pingpong, ScatterLab.
-* You can refer to our [blog post](https://blog.pingpong.us/generation-model/) for detailed pre-training processes and experiment results.
-* Check our [Korean demo](https://pingpong.us/ko/generation) and [Japanese demo](https://pingpong.us/jp/generation) for the chatting experience.
+* You can refer to [blog post](https://blog.pingpong.us/generation-model/) for detailed pre-training processes and experiment results.
+* Check [Korean demo](https://pingpong.us/ko/generation) and [Japanese demo](https://pingpong.us/jp/generation) for the chatting experience.
 
 ## Downloads
 
-* You can download the pretrained GPT-2 and Meena models from [Release page](https://github.com/pingpong-ai/dialogue-generation-models/releases/tag/v1.0).
+* You can download the pretrained GPT-2 and Meena models from [Release page](https://github.com/voir-dire/dialogue-generation-models/releases/tag/1.0.0).
     - **`base_gpt_trained_on_dialogue_data_kr.pth`**
         - 한국어 대화 데이터로만 학습한 base size GPT-2
     - **`large_gpt_trained_on_dialogue_data_kr.pth`**
