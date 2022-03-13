@@ -10,7 +10,7 @@
 
 ## Downloads
 
-* You can download the pretrained GPT-2 and Meena models from [Release page](https://github.com/voir-dire/dialogue-generation-models/releases/tag/1.0.0).
+* You can download the pretrained GPT-2 and Meena models from [Release page](https://github.com/yuwon/dialogue-generation-models/releases/tag/1.0.0).
     - **`base_gpt_trained_on_dialogue_data_kr.pth`**
         - 한국어 대화 데이터로만 학습한 base size GPT-2
     - **`large_gpt_trained_on_dialogue_data_kr.pth`**
